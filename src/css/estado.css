@@ -1,0 +1,273 @@
+.activo{
+    background-color: #16e9ab;
+    text-align:center;
+    border-radius:10px;
+    
+  }
+  .noactivo{
+    background-color: #E91654;
+    color: white;
+    text-align:center;
+    border-radius: 10px;  
+  }
+  
+  .nav-lateral{
+  background-color: #3f014e;
+  }
+  .div-secc{
+    height: 240px;
+    }
+  .div-cobro{
+    background-color:#9addff;
+  }
+  .div-table{
+    height: 530px;
+    width:100%
+  }
+  /**ccs de la tabla de contenidos*/
+  
+  
+  /**ccs de la tabla de contenidos producto*/
+  
+  .table-wrap{
+    width:100%;
+    height:100%;
+    overflow: auto;
+    overflow-x: scroll;
+    border: 0.5px solid #44444450;
+  }
+  
+  .table-item{
+    width:100%;
+    min-width:max-content;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table-item th{
+    position: sticky;
+    top:0px;
+    z-index:1;
+    background-color: #40c5c5;
+    color: #ebebeb;
+    padding: 5px 8px 5px 8px;
+   /* border-bottom: 0.5px solid hsla(0, 100%, 100%, 0.404);*/
+  }
+  
+  
+   .table-item td{
+    /*border-bottom: 1px solid #d6d6d6; */
+    padding: 3px 8px 3px 8px;
+  }
+  
+  .table-item tr:hover{
+  cursor: pointer;
+    background-color:rgb(199, 219, 250);
+   }
+  /*
+  .table-item
+  tr:nth-child():hover{
+    background-color:rgb(113, 169, 212);
+  }
+  /*.table-space tr:nth-child(odd){
+    background-color:rgb(255, 255, 255);
+  }
+  */
+  
+  .table-item  th:nth-child(1),
+   td:nth-child(1)
+  {
+    
+  position:sticky;
+  width: 40px;
+  left: 0;
+  }
+  
+  .table-item  th:nth-child(2),
+  td:nth-child(2)
+  {
+  position:sticky;
+  left: 40px;
+  
+  }
+  .table-item tr:nth-child(even) td {
+    background-color: rgb(226, 237, 250)
+    }
+  
+  .table-item  tr:nth-child(odd) td {
+  background-color: rgb(253, 253, 253)    
+  }
+    /*.table-item tr:nth-child(odd) td {
+      background-color: rgb(247, 216, 216);
+      }*/
+  
+  .table-item  th:nth-child(1),
+   th:nth-child(2){
+  z-index: 3;
+  }
+  
+  .table-item  td:nth-child(1),
+  td:nth-child(2)
+  {
+    background-color: #ffffff;
+  }
+  
+  .table-item  td:nth-child(n+3){
+    text-align:center;
+  }
+  
+  
+  
+  /**ccs de la tabla de la table secundaria*/
+  
+  
+  
+  .table-subitem {
+    width:100%;
+    min-width: max-content;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table-subitem  th{
+    position: sticky;
+    top:0px;
+    background-color: #ee2742;
+    color: #ebebeb;
+    padding: 5px 8px 5px 8px;
+    z-index: 3;
+   /* border-bottom: 0.5px solid hsla(0, 100%, 100%, 0.404);*/
+  }
+  
+  .table-subitem  tr:hover{
+  cursor: pointer;
+    background-color:rgb(71, 152, 245);
+   }
+  
+  
+   .table-subitem  td{
+  /*  border-bottom: 1px solid #d6d6d6; */
+    padding: 3px 8px 3px 8px;
+  }
+  
+  
+  .table-subitem  th:nth-child(1),
+   td:nth-child(1)
+  {
+  position:sticky;
+  width: 5px;
+  left: 0;
+  }
+  
+  .table-subitem  th:nth-child(2)
+  {
+  position:sticky;
+  left: 5px;
+  
+  }
+  .table-subitem td:nth-child(2){
+    position:sticky;
+    left: 5px;
+  }
+  
+  .table-subitem  th:nth-child(1),
+   th:nth-child(2){
+  z-index: 4;
+  }
+  .table-subitem tr:nth-child(even) td {
+    background-color: rgb(255, 213, 234)
+    }
+  
+    .table-subitem tr:nth-child(odd) td {
+      background-color: rgb(255, 255, 255)
+      }
+  
+      
+  
+  .table-subitem  td:nth-child(1),
+  td:nth-child(2)
+  {
+    background-color: #ffffff;
+  }
+  .table-subitem  td:nth-child(n+3)
+  {
+    text-align:center;
+    
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgba(117, 24, 224, 0);
+  }
+  ::-webkit-scrollbar-thumb {
+    /*background-image: linear-gradient(180deg, #D0368A 0%, #708bd400 99%);*/
+    background-color:#307adb;
+    border-radius: 100px;
+  }
+  
+  #factura{
+    display: none;
+    page-break-before: always;
+    }
+    @media print {
+    /*css aquí */
+    .rowfac {
+     display: flex;  
+    }
+    #rowfoot{
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      color: #16e9ab;
+    }
+    
+    }
+    
+    .icon-wrappers{
+      position:relative;
+      float:left;
+      width:33px
+    }
+    
+    
+    #i {   
+    
+      text-align:center;
+      vertical-align:middle;
+    }
+    .icon-color {color: black}
+    .badge{
+      background-color: yellow;
+      border-width: 2px;
+      border-style: solid;
+      border-color: white;
+      width: 28px;
+      height: 28px;
+      margin: 0;
+      border-radius: 100%;
+      position:absolute;
+     
+    
+      
+    
+      top:-15px;
+      right:-9px;
+      padding:6px;
+    
+      display:inline-block;
+      text-align: center;
+     color: black;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+.img{
+  background-image: url('../Img/Login1.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
