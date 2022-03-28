@@ -79,7 +79,8 @@ return (
                                 <div className="mb-3">
                                         <label htmlFor="password" className="form-label text-white fw-bold">Contraseña:</label>
                                         <div className="form-group py-1 pb-2">
-                                        <span class="fas fa-lock form-control-icon fa-lg" style={{color:'black'}}></span><input type="password" className="form-control" placeholder="Password" name="password"  onChange={(e)=>setpassword(e.target.value)}/>
+                                        <span class="fas fa-lock form-control-icon fa-lg" style={{color:'black'}}></span>
+                                        <input type="password" className="form-control" placeholder="Password" name="password"  onChange={(e)=>setpassword(e.target.value)} />
                                         </div>
                                 </div>
                                 
