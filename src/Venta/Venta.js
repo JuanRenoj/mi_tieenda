@@ -1,5 +1,3 @@
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../css/estado.css'
 import DataProducto from "../Producto/DataProducto";
 import React, { useState, useEffect } from 'react';
@@ -950,16 +948,16 @@ return (
                                 <td>
                                     <div className="d-flex  align-items-center ">
                                         <input type="number" onChange={(e)=>{ModificarPrecio(item,e.target.value)}} className="form-control form-control-sm w-50" value={item.precio_yarda}/> 
-                                        <i className="bi bi-pencil-square " aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal" style={{color:"#1C78E3"}} onClick={(e)=>seleccionarPrecio("normal",item.idproducto,item.precio_yarda,e.target)}></i>
+                                        <i className="far fa-pen-square " aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal" style={{color:"#1C78E3"}} onClick={(e)=>seleccionarPrecio("normal",item.idproducto,item.precio_yarda,e.target)}></i>
                                         {precioCliente ? 
-                                        <i className="bi bi-credit-card-2-back" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal"  style={{color:"#2ED19E"}} onClick={(e)=>seleccionarPrecio("cliente",item.idproducto,item.precio_yarda,e.target)}></i> 
+                                        <i className="fas fa-money-check-edit" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal"  style={{color:"#2ED19E"}} onClick={(e)=>seleccionarPrecio("cliente",item.idproducto,item.precio_yarda,e.target)}></i> 
                                         : null}
                                     </div> 
                                 </td>
                                 <td >{item.total}</td>   
                                 <td >{item.ubicacion}</td>
                                 <td >
-                                <i className="bi bi-trash"   style={{color:"#D6294A"}} aria-hidden="true" onClick={()=> eliminar(item, item.idproducto)}></i>
+                                <i className="fas fa-trash-alt"   style={{color:"#D6294A"}} aria-hidden="true" onClick={()=> eliminar(item, item.idproducto)}></i>
                                 </td>
                             </tr>
                             ))

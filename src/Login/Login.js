@@ -55,7 +55,7 @@ return (
     <div className="container-fluid login">
      
     <div className="container w-75 mt-5">
-        <div className="row background-div align-items-stretch rounded " >
+        <div className="row background-div align-items-stretch rounded  h-75vh" >
             <div className="  col  d-none d-lg-block col-md-5 col-lg-5 col-xl-6  ">
                 <img  src={img} className="rounded " alt ="logo" width="100%" height="100%"/>
             </div>
