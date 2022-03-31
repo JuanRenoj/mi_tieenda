@@ -948,16 +948,16 @@ return (
                                 <td>
                                     <div className="d-flex  align-items-center ">
                                         <input type="number" onChange={(e)=>{ModificarPrecio(item,e.target.value)}} className="form-control form-control-sm w-50" value={item.precio_yarda}/> 
-                                        <i className="fas fa-pen-square" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal" style={{color:"#1C78E3"}} onClick={(e)=>seleccionarPrecio("normal",item.idproducto,item.precio_yarda,e.target)}></i>
+                                        <i className="fas fa-pen-square fa-lg" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal" style={{color:"#1C78E3"}} onClick={(e)=>seleccionarPrecio("normal",item.idproducto,item.precio_yarda,e.target)}></i>
                                         {precioCliente ? 
-                                        <i className="fas fa-money-check-edit" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal"  style={{color:"#2ED19E"}} onClick={(e)=>seleccionarPrecio("cliente",item.idproducto,item.precio_yarda,e.target)}></i> 
+                                        <i className="fas fa-money-check-edit fa-lg" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal"  style={{color:"#2ED19E"}} onClick={(e)=>seleccionarPrecio("cliente",item.idproducto,item.precio_yarda,e.target)}></i> 
                                         : null}
                                     </div> 
                                 </td>
                                 <td >{item.total}</td>   
                                 <td >{item.ubicacion}</td>
                                 <td >
-                                <i className="fas fa-trash-alt"   style={{color:"#D6294A"}} aria-hidden="true" onClick={()=> eliminar(item, item.idproducto)}></i>
+                                <i className="fas fa-trash-alt fa-lg"   style={{color:"#D6294A"}} aria-hidden="true" onClick={()=> eliminar(item, item.idproducto)}></i>
                                 </td>
                             </tr>
                             ))
