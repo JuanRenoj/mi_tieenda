@@ -1,5 +1,4 @@
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 import DataCuentaProveedor from "./DataCuentaProveedor";
 import DataProveedor from "./DataProveedor";
@@ -348,7 +347,7 @@ const Busqueda =(buscarTexto)=>{
    
   
 return(
-        <div>
+        <div >
            <div className="mb-2">   <h5 className="modal-title">Proveedor</h5></div>
             
 
@@ -611,17 +610,15 @@ return(
   </div>
 </div>
 
- < div className="container-fluid  mt-1  row ">
+ < div className="mt-1  row ">
      <div className="col-12 col-sm-12 col-md-5 col-lg-5 ">
         <div className="row mb-2 ">
             <div className="col-9 ">
-            <div className=" input-group form-group input-group-prepend">
-                                       
-                                            
-                                            <div className="input-group-prepend  w-100" >
-                                            <span className="bi bi-search" style={{color:'gray'}}  ></span>
+            <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search"></span>
+                    </div>
                                             <input type="text" className="form-control " placeholder="Buscar Proveedor..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
-                                            </div>
                                             
                                         </div>
                                    
@@ -637,7 +634,7 @@ return(
 <table className="table-item ">
   <thead >
           <tr>
-            <th>Codigo</th>
+            <th>#</th>
             <th>Nombre</th>
         
             <th>Opciones</th>
@@ -656,10 +653,10 @@ return(
                <td>
                
                <div className="d-flex dropdown justify-content-center alig-items-center">
-  <button className="btn btn-sm btn-primary dropdown-toggle " type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <i className="fas fa-ellipsis-h icon-option" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
    
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
     <li  className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>actualizar(item,e.target)} >Editar</li>
     <li  className="dropdown-item" onClick={()=>eliminar(item.idproveedor)}>Eliminar</li>
     <li  className="dropdown-item" data-bs-toggle="modal" data-bs-target="#cuentaModal" onClick={(e)=>abrirIngresoc(e.target)} >Ingresar Nueva Cuenta</li>
@@ -719,10 +716,10 @@ return(
                 <td>
                
                <div className="d-flex dropdown justify-content-center alig-items-center">
-  <button className="btn btn-sm btn-warning dropdown-toggle " type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <i className="fas fa-ellipsis-h icon-option" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
    
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
     <li  className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#abonoModal" onClick={(e)=>abrirIngresoAbono(e.target,item.idcuenta)} >Agregar abono</li>
     <li  className="dropdown-item" data-bs-toggle="modal" data-bs-target="#abonodetalleModal" onClick={(e)=>abrirDetalleAbonos(e.target,item.idcuenta)} >Detalles de Abono</li>
    <li  className="dropdown-item" data-bs-toggle="modal" data-bs-target="#cuentaModal" onClick={(e)=>abrirActualizarC(e.target,item)} >Editar</li>

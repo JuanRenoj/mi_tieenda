@@ -351,11 +351,12 @@ return (
      
       <div className="row mb-2">
       <div className="col-9">
-        <div className=" input-group form-group">                              
-            <div className="input-group-prepend col-9">
-            <span className="bi bi-search" style={{color:'gray'}}  ></span>
+      <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search"></span>
+                    </div>
             <input type="text" className="form-control " placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
-            </div>                               
+                                        
         </div>
                              
      </div> 

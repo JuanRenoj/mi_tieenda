@@ -276,11 +276,14 @@ setmyChart( new Chart(ctx,config));
 
 return(
     <div className="container-fluid vh-100">
-    <div className="mb-2">   <h5 className="modal-title">Informe</h5></div>
+    <div className="mb-2">   
+    <h5 className="modal-title">Informe</h5>
+    <label>Selecione el tipo de informe que desea</label>
+    </div>
 
-     <div className="row mb-2">
+     <div className="row mb-2 secc-buscar">
 
-     <div className="col-4"> 
+     <div className="col-6"> 
                <div className="form-check form-check-inline">
                <div className="form-check form-check-inline">
                   <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Por Dia"  onClick={(e)=>verInforme("Dia")}/>
@@ -299,18 +302,19 @@ return(
             </div>
 
 
-            <div className="col-8">
+            <div className="col-6">
            <div className="row">
-            <div className="col-auto d-flex" >
-  <label  className="me-2" >Fecha inicial</label>
-  <input type="date" className="form-control form-control-sm" value={fechainicio} onChange={(e)=>setfechainicio(moment(e.target.value).format("YYYY-MM-DD"))}/>
+       
+<div class="input-group input-group-sm mb-2 col">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Fecha Inicio</span>
+  <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value={fechainicio} onChange={(e)=>setfechainicio(moment(e.target.value).format("YYYY-MM-DD"))}/>
 </div>
-<div className="col-auto d-flex">
-  <label htmlFor="exampleFormControlInput1" className="me-2"  >Fecha  final</label>
-  <input type="date"  id="exampleFormControlInput1"  className="form-control form-control-sm"  value={fechaFinal} onChange={(e)=>setfechaFinal(moment(e.target.value).format("YYYY-MM-DD"))}/>
+<div class="input-group input-group-sm mb-2 col ">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Fecha Final</span>
+  <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value={fechaFinal} onChange={(e)=>setfechaFinal(moment(e.target.value).format("YYYY-MM-DD"))}/>
 </div>
-<div className="col-auto">
-<button type="button" className="ml-1 btn btn-success" onClick={()=>verInforme("Rango")} >Buscar</button>
+<div className="col">
+<button type="button" className="ml-1 btn btn-sm btn-warning" onClick={()=>verInforme("Rango")} >Buscar</button>
 </div> 
 </div>
  </div>            
@@ -321,32 +325,42 @@ return(
     
 </div>
 <div >
- 
-<table className="table-subitem">
-  <thead >
-          <tr>
-            <th></th>
-            <th>Ventas</th>
-            <th>Inversion</th>
-             <th>Ganacia</th>
-           
-          </tr>
-        </thead>
-       <tbody>
-  {datosGanacias ?
-datosGanacias.map((item,index)=>(
-  <tr  key={index} >  
-  <td></td>          
-  <td>{item.ventas > 0 ? item.ventas.toFixed(2) : null}</td>
-  <td>{item.compra > 0 ? item.compra.toFixed(2) : null}</td> 
-  <td>{item.ganancia > 0 ? item.ganancia.toFixed(2) : null}</td>
-</tr>
-))
+  {datosGanacias.length > 0   ?  datosGanacias.map((item,key) =>(
+    <div className='contain-status' key={key}>
+ <div className='div-ventas'>
+<label className='title-card-info'>Ventas</label>
+<label className='desc-card-info'>{item.ventas > 0 ? item.ventas.toFixed(2) : 0}</label>
+ </div>
+ <div className='div-inversion'>
+ <label className='title-card-info'>Inversión</label>
+<label className='desc-card-info'>{item.compra > 0 ? item.compra.toFixed(2) : 0}</label>
+ </div>
+ <div className='div-ganancia'>
 
-: null
-}
-</tbody>
-      </table>
+ <label className='title-card-info'>Ganancia</label>
+<label className='desc-card-info'>{item.ganancia > 0 ? item.ganancia.toFixed(2) : 0}</label>
+ </div></div>
+ )) 
+
+ : 
+
+ <div className='contain-status' >
+ <div className='div-ventas'>
+<label className='title-card-info'>Ventas</label>
+<label className='desc-card-info'>0</label>
+ </div>
+ <div className='div-inversion'>
+
+ <label className='title-card-info'>Inversión</label>
+<label className='desc-card-info'>0</label>
+ </div>
+ <div className='div-ganancia'>
+
+ <label className='title-card-info'>Ganancia</label>
+<label className='desc-card-info'>0</label>
+ </div>
+ </div>
+ }
   
 </div>
 <div className="row vh-70">
@@ -377,7 +391,12 @@ datosVentas.map((item,index)=>(
   <td>{moment.utc(item.fecha).format("DD/MM/YYYY")}</td>
   <td>{item.cliente}</td> 
   <td>{item.total}</td>
-  <td ><button  type="button" className="btn btn-sm-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>verDetalle(item,e.target)}><i style={{color: "#FABC2A"}} className="fa fa-info-circle gb-primary" aria-hidden="true"></i></button></td>
+  <td >
+    <div className="dropdown">
+    <i  type="button" className="fas fa-info-circle icon-option" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>verDetalle(item,e.target)}/>
+    </div>
+  </td>
+
 </tr>
 ))
 

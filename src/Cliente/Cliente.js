@@ -130,20 +130,17 @@ const Busqueda =(buscarTexto)=>{
    );
   }
     return(
-      <div className="container-fluid  p-2 vh-100 ">
+      <div className="container">
 
            <div className="mb-2">   <h5 className="modal-title">Cliente</h5></div>
             <div className="row mb-2">
             <div className="col-9">
-            <div className=" input-group form-group">
-                                       
-                                            
-                                            <div className="input-group-prepend col-9">
-                                            <span className="bi bi-search" style={{color:'gray'}}  ></span>
-                                            <input type="text" className="form-control " placeholder="Buscar Cliente..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
-                                            </div>
-                                            
-                                        </div>
+            <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search"></span>
+                    </div>
+                      <input type="text" className="form-control " placeholder="Buscar Cliente..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
+                    </div>
                                    
            </div> 
     <div className="col-sm">
@@ -226,10 +223,16 @@ const Busqueda =(buscarTexto)=>{
             
             
                <td>
-               <button type="button" className=" btn  btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>actualizar(item,e.target)} >Editar</button>
-             
-               <button type="submit" className="ms-2 btn btn-outline-primary btn-sm" onClick={()=>eliminar(item.idcliente)}>Eliminar</button>
-               </td>
+               <div className="dropdown">
+  <i className="fas fa-ellipsis-h icon-option" type="button"  id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
+    <li className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>actualizar(item,e.target)} >Editar Cliente</li>
+    <li className=" dropdown-item" onClick={()=>eliminar(item.idcliente)} >Eliminar cliente</li>
+  </ul>
+</div>
+             </td>
              </tr>
            ))
             :

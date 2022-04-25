@@ -1,5 +1,3 @@
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import 'bootstrap-icons/font/bootstrap-icons.css';
 import DataProducto from "../Producto/DataProducto";
 
 import DataPrecio from "../Precio/DataPrecio";
@@ -208,15 +206,12 @@ return(
      <div className="col-12 col-sm-12 col-md-7 col-lg-7 ">
         <div className="row mb-2 ">
             <div className="col">
-            <div className=" input-group form-group input-group-prepend">
-                                       
-                                            
-                                            <div className="input-group-prepend  w-100" >
-                                            <span className="bi bi-search" style={{color:'gray'}}  ></span>
-                                            <input type="text" className="form-control " placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
-                                            </div>
-                                            
-                                        </div>
+            <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search"></span>
+                    </div> 
+                    <input type="text" className="form-control " placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
+                    </div>
                                    
            </div> 
    
@@ -230,13 +225,7 @@ return(
           <tr>
             <th>#</th>
             <th>Descripcion</th>
-            <th>Precio compra</th>
-            
-
-          
-          <th>Precio venta rollo</th>
-            <th>Precio venta yarda</th>
-  
+            <th>Precios</th>
             <th>Opciones</th>
           </tr>
         </thead>
@@ -248,17 +237,21 @@ return(
               
              
                <td>{item.nombre} {item.estilo} {item.color}</td>
-            
-               <td>{item.precio_compra}</td> 
-               <td>{item.preciorollo}</td> 
-               <td>{item.precioyarda}</td> 
+               <td>
+               <div className='d-flex flex-column text-start'>
+                 <label className='item-title'>De compra: <span className='desc-item'>{item.precio_compra}</span> </label>
+                 <label className='item-title'>De venta/Rollo: <span className='desc-item'> {item.preciorollo}</span></label>
+                 <label className='item-title'>De Venta/Yarda: <span className='desc-item'> {item.precioyarda}</span></label>
+                 </div>
+               </td>
+             
               
                <td>
                <div className="dropdown">
-  <button className="btn btn-sm btn-primary dropdown-toggle " type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <i className="fas fa-ellipsis-h icon-option" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
    
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
     <li className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#precioModal" onClick={(e)=>abrirPrecio(e.target, item.idproducto)} >Ingresar precio</li>
   
   </ul>
@@ -281,7 +274,7 @@ return(
       </div>
           
       <div className="col-12 col-sm-12 col-md-5 col-lg-5 ">
-        <h5>Precio asignado para el producto</h5> 
+        <h5>Precio de venta asignado al producto</h5> 
         
           <div className="div-table">
     
@@ -294,8 +287,8 @@ return(
           <tr>
           <th>#</th>
          
-          <th>Precio por rollo</th>
-            <th>Precio por yarda</th>
+          <th>Precio/rollo</th>
+            <th>Precio/yarda</th>
            
             <th>Opciones</th>
 
@@ -316,10 +309,10 @@ return(
               
                <td>
                <div className="dropdown">
-  <button className="btn btn-outline-primary dropdown-toggle " type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <i className="fas fa-ellipsis-h icon-option" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
    
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
     <li className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#precioModal" onClick={(e)=>abrirPrecioActualiza(e.target, item)} >Editar</li>
     <li className=" dropdown-item"  onClick={()=>eliminarPrecio(item.idprecio)} >Elimnar</li>
     

@@ -11,7 +11,7 @@ import moment from "moment";
 import React, { useState,useEffect } from 'react';
 import swal from "sweetalert";
 import TablePdf from "../components/TablePdf";
-import  ReactPDF  from '@react-pdf/renderer';
+
 
 
 
@@ -440,14 +440,12 @@ async function actualizarCantidadP(){
               <div className="mb-2">   <h5 className="modal-title">Producto</h5></div>
 
             <div className="col-9">
-            <div className=" input-group form-group ">                              
-                                            <div className="input-group-prepend w-100">
-                                            <span className="bi bi-search" style={{color:'gray'}}  ></span>
-                                            <input type="text" className="form-control " placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
-                                            </div>
-                                            
-                                        </div>
-                                   
+            <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search"></span>
+                    </div>
+                       <input type="text" className="form-control " placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />                     
+                    </div>                        
            </div> 
     <div className="col-auto">
   <button type="button" className="ml-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>abrirIngreso(e.target)} >Nuevo</button>
@@ -862,15 +860,9 @@ async function actualizarCantidadP(){
           <tr>
             <th>#</th>
             <th>Descripcion</th>
-            <th>Proveedor</th>
-            <th>Fecha</th>
-            
-            <th>Cantidad  de Rollo</th>
-            <th>Cantidad yarda</th>
-            <th>Precio compra rollo</th>
-            <th>Precio venta rollo</th>  
-            <th>Precio venta yarda</th>
-            <th>Ubicacion</th>
+            <th>Detalle</th>
+            <th>Cantidad</th>            
+            <th>Precios</th>
             <th>Opciones</th>
           </tr>
         </thead>
@@ -881,21 +873,40 @@ async function actualizarCantidadP(){
             <tr key={index}>
                <td>{item.idproducto}</td>
                <td>{item.nombre} {item.estilo} {item.color}</td>
-               <td>{item.proveedor}</td>
-               <td>{moment.utc(item.fecha_ingreso).format("DD/MM/YYYY")}</td>
+               <td>
+                 <div className='d-flex flex-column text-start '>
+                   <label className='item-title'>Proveedor: <span className='desc-item'>{item.proveedor}</span></label>
+                   <label className='item-title'>Fecha de ingreso:  <span className='desc-item'>{moment.utc(item.fecha_ingreso).format("DD/MM/YYYY")} </span></label>
+                            <label className='item-title'>Precio compra: <span className='desc-item'> {item.precio_compra}</span> </label>
+                 </div>
+               </td>
+              
+              <td>
+                 <div className='d-flex flex-column text-start'>
+                 <label className='item-title'>Rollo: <span className='desc-item'>{item.cant_rollo}</span></label>
+                   <label className='item-title'>Yarda: <span className='desc-item'> {item.cant_yarda}</span></label> 
+                   <label className='item-title'>Ubicacion: <span className='desc-item'>{item.ubicacion}</span></label>
+         
+                    
+                 </div>
+                 </td> 
                
-               <td>{item.cant_rollo}</td>
-               <td>{item.cant_yarda}</td>  
-               <td>{item.precio_compra}</td> 
-               <td>{item.preciorollo}</td> 
-               <td>{item.precioyarda}</td> 
-               <td>{item.ubicacion}</td>
+             
+                 <td>
+                 <div className='d-flex flex-column text-start'>
+                 <label className='item-title'>Rollo: <span className='desc-item'>{item.preciorollo}</span> </label>
+                   <label className='item-title'>Yarda: <span className='desc-item'> {item.precioyarda}</span></label>
+                 </div>
+                 </td> 
+               
+              
+               
                <td>
                <div className="dropdown">
-  <button class="btn btn-primary btn-sm dropdown-toggle" type="button"  id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <i className="fas fa-ellipsis-h icon-option" type="button"  id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
   
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
     <li className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#precioModal" onClick={(e)=>abrirPrecio(e.target, item.idproducto)} >Ingresar precio</li>
     <li className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#preciocModal" onClick={(e)=>abrirPrecioxcliente(e.target, item.idproducto)} >Ingresar precio cliente</li>
     <li  className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>actualizar(item,e.target)} >Editar</li>

@@ -1,5 +1,5 @@
 /**  'force new connection' : true,
-    reconnectionAttempts: 'Infinity', 
+    reconnec#ffffffempts: 'Infinity', 
     timeout : 10000,  
    
     rememberUpgrade:true, */

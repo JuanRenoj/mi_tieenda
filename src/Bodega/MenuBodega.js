@@ -69,7 +69,7 @@ function MenuBodega(props) {
     return (
       <div className="container-fluid  p-2 vh-100 ">
           <div >
-            <nav className="navbar navbar-light bg-light" >
+            <nav className="navbar navbar-light" >
                <form className="container-fluid justify-content-end">
                  <button className="btn btn-sm btn-primary me-2" type="button" onClick={()=>setTipo("Bodega")}> Bodega</button>
                  <button className="btn btn-sm btn-primary me-2" type="button" onClick={()=>setTipo("Bodega La Septima")}>Bodega La Septima</button>

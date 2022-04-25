@@ -223,16 +223,12 @@ const Busqueda =(buscarTexto)=>{
             <div className="mb-2">   <h5 className="modal-title">Empleado</h5></div>
             <div className="row mb-2">
             <div className="col-9">
-            <div className=" input-group form-group">
-                                       
-                                            
-                                            <div className="input-group-prepend col-9">
-                                            <span className="bi bi-search" style={{color:'gray'}}  ></span>
-                                            <input type="text" className="form-control " placeholder="Buscar Empleado..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
-                                            </div>
-                                            
-                                        </div>
-                                   
+            <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search"></span>
+                    </div>
+                      <input type="text" className="form-control " placeholder="Buscar Empleado..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />     
+                    </div>                                 
            </div> 
     <div className="col-sm">
   <button type="button" className="ml-2 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>abrirIngreso(e.target)} >Agregar Nuevo</button>
@@ -342,10 +338,10 @@ const Busqueda =(buscarTexto)=>{
                
                <td>
                <div className="d-flex dropdown justify-content-center alig-items-center">
-  <button className="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  <i className="fas fa-ellipsis-h icon-option" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
    
-  </button>
-  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  </i>
+  <ul className="dropdown-menu " aria-labelledby="dropdownMenuButton2">
     <li className=" dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e)=>actualizar(item,e.target)} >Editar</li>
     <li  className="dropdown-item" onClick={()=>eliminar(item.idempleado)}>Eliminar</li>
     <li className=" dropdown-item"  onClick={(e)=>consultarPermiso(item.idempleado)} >Permisos</li>

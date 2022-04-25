@@ -740,11 +740,12 @@ return (
         <div className="row g-3 mb-1">    
         <h6>Lista de producto Disponible</h6>
             <div className="col">
-                <div className=" col input-group  form-group " >
-                    <div className="col input-group-prepend " >
-                    <i className="bi bi-search" style={{color:'gray'}}  ></i>
-                    <input type="text" className="form-control" placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
+                <div className="input-group" >
+                  <div className='input-group-text'>
+                    <span className="fa fa-search input-gruop-text icon-search" ></span>
                     </div>
+                    <input type="text" className="form-control" placeholder="Buscar Producto..."  value={buscar}  onChange={(e)=>Busqueda(e.target.value)} />
+                   
                 </div>                      
             </div> 
             <div className="col"> 
@@ -889,7 +890,7 @@ return (
                         <thead >
                             <tr >
                                 <th>#</th>
-                                <th>Descripcion</th>
+                                <th >Descripción</th>
                                 <th>cantidad rollo</th>                                
                                 <th>Cantidad yarda</th>
                                 <th>Precio rollo</th>
@@ -901,7 +902,7 @@ return (
                             {datos ? datos.map((item,index) => (
                                 <tr key={index} onClick={()=>{AgregarProducto(item,0)}}>
                                     <td >{item.idproducto}</td>
-                                    <td >{item.nombre+ " "} {item.estilo+ " "} {item.color}</td>
+                                    <td  >{item.nombre+ " "} {item.estilo+ " "} {item.color}</td>
                                     <td >{item.cant_rollo}</td>    
                                     <td >{item.cant_yarda}</td> 
                                     <td >{item.precio_rollo}</td>
@@ -948,9 +949,9 @@ return (
                                 <td>
                                     <div className="d-flex  align-items-center ">
                                         <input type="number" onChange={(e)=>{ModificarPrecio(item,e.target.value)}} className="form-control form-control-sm w-50" value={item.precio_yarda}/> 
-                                        <i className="fas fa-pen-square fa-lg" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal" style={{color:"#1C78E3"}} onClick={(e)=>seleccionarPrecio("normal",item.idproducto,item.precio_yarda,e.target)}></i>
+                                        <i className="fa fa-pencil-square-o ms-1 fa-lg ms-1 " aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal" style={{color:"#1C78E3"}} onClick={(e)=>seleccionarPrecio("normal",item.idproducto,item.precio_yarda,e.target)}></i>
                                         {precioCliente ? 
-                                        <i className="fas fa-money-check-edit fa-lg" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal"  style={{color:"#2ED19E"}} onClick={(e)=>seleccionarPrecio("cliente",item.idproducto,item.precio_yarda,e.target)}></i> 
+                                        <i className="fa fa-address-card fa-lg ms-1"aria-hidden="true" data-bs-toggle="modal" data-bs-target="#precioModal"  style={{color:"#2ED19E"}} onClick={(e)=>seleccionarPrecio("cliente",item.idproducto,item.precio_yarda,e.target)}></i> 
                                         : null}
                                     </div> 
                                 </td>
@@ -973,32 +974,32 @@ return (
           
   
   <div class="row mb-2 mt-3">
-  <label for="inputPassword3" class="col-sm-4 col-form-label">Subtotal</label>
+  <label htmlFor="inputPassword3" class="col-sm-4 col-form-label">Subtotal</label>
     <div class="col-sm-8">
     <input className="form-control" value={subtotal} disabled /> 
     </div>
   </div>
 
   <div class="row mb-2">
-    <label for="inputPassword3" class="col-sm-4 col-form-label">Descuento:</label>
+    <label htmlFor="inputPassword3" class="col-sm-4 col-form-label">Descuento:</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" value={descuento} onChange={(e)=>calcDescuento(e.target.value)}/> 
     </div>
   </div>
   <div class="row mb-2">
-    <label for="inputPassword3" class="col-sm-4 col-form-label">Total:</label>
+    <label htmlFor="inputPassword3" class="col-sm-4 col-form-label">Total:</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" disabled value={total}/> 
     </div>
   </div>
   <div class="row mb-2">
-    <label for="inputPassword3" class="col-sm-4 col-form-label">Recibido:</label>
+    <label htmlFor="inputPassword3" class="col-sm-4 col-form-label">Recibido:</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" value={recibido} onChange={(e)=>calcCambio(e.target.value)}/>
     </div>
   </div>
   <div class="row mb-3">
-    <label for="inputPassword3" class="col-sm-4 col-form-label">Cambio:</label>
+    <label htmlFor="inputPassword3" class="col-sm-4 col-form-label">Cambio:</label>
     <div class="col-sm-8">
       <input type="number" class="form-control" disabled value={cambio} />
     </div>
